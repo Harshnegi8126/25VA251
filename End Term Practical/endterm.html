@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .box {
+            background: white;
+            padding: 15px;
+            width: 250px;
+            margin: auto;
+            border-radius: 5px;
+        }
+        input, button {
+            margin: 8px;
+            padding: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Temp Converter</h2>
+
+    <input type="number" id="t" placeholder="Enter value"><br>
+
+    <button onclick="f()">C to F</button>
+    <button onclick="c()">F to C</button>
+
+    <p id="res"></p>
+</div>
+
+<script>
+function f() {
+    var x = document.getElementById("t").value;
+    if (x == "") {
+        document.getElementById("res").innerHTML = "Enter value";
+        return;
+    }
+    var y = (x * 9/5) + 32;
+    document.getElementById("res").innerHTML = x + " C = " + y + " F";
+}
+
+function c() {
+    var x = document.getElementById("t").value;
+    if (x == "") {
+        document.getElementById("res").innerHTML = "Enter value";
+        return;
+    }
+    var y = (x - 32) * 5/9;
+    document.getElementById("res").innerHTML = x + " F = " + y + " C";
+}
+</script>
+
+</body>
+</html>
